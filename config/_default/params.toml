@@ -1,8 +1,10 @@
 # Pages placed under these sections will be shown on homepage and archive page.
 mainSections = ["post"]
+#控制首页显示的内容，默认是post，也就是content/post目录下的内容，如果你想显示content/article目录下的内容，可以改成mainSections = ["article"]
 # Output page's full content in RSS.
 rssFullContent = true
 favicon        = "img/favicon.png"
+#控制浏览器标签页显示的图标，默认是img/favicon.png，你可以把你喜欢的图标放在static/img目录下，然后改成favicon = "img/your-icon.png"
 
 # Accepted values: "default", "lastmod"
 # default = see https://gohugo.io/quick-reference/glossary/#default-sort-order
@@ -10,22 +12,25 @@ favicon        = "img/favicon.png"
 SortBy              = "default"
 
 [footer]
-    since      = 2020
-    customText = ""
-
+    since      = 2026
+    customText = "Built with Hugo Theme Stack"
+#customTEXT可以在页脚添加自定义文字，比如built with hugo theme stack之类的，默认是空，如果不想显示版权年份，可以把since改成0或者干脆删除since这一行
 [dateFormat]
     published   = ":date_full"
     lastUpdated = ":date_full"
 
 [sidebar]
-    emoji    = "🍥"
-    subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    avatar   = "img/avatar.png"
+    emoji    = "🥳"
+    subtitle = "My daily life in Japan."
+    avatar   = "/img/avatar.jpg"
+    #头像path
 
 [article]
-    headingAnchor = false
-    math          = false
-    readingTime   = true
+    headingAnchor = true #文章标题锚点，默认是true，如果不需要可以改成false
+    math          = true #是否启用数学公式支持，默认是true，如果不需要可以改成false
+    readingTime   = false
+    toc=true #是否启用文章目录，默认是false，如果需要可以改成true
+
 
     [article.license]
         enabled = true
