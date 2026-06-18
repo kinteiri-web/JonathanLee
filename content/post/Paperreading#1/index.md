@@ -1,8 +1,8 @@
 ---
 title: Paper Reading#1
-description: Welcome to Hugo Theme Stack
+description: 一篇文献阅读的记录
 slug: hello-world
-date: 2022-03-06 00:00:00+0000
+date: 2026-06-18 00:00:00+0000
 image: cover.jpg
 categories:
     - Example Category
