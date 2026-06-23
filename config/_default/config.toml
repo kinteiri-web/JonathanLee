@@ -1,7 +1,7 @@
 # Change baseurl before deploy
-baseurl = "https://kinteiri-web.github.io/Jonathan/"
+baseurl = "https://kinteiri-web.github.io/JonathanLee/"
 locale  = "zh-cn"
-title   = "一二123的主页"
+title   = "一二123的博客"
 
 # Theme i18n support
 # See all available values at https://github.com/CaiJimmy/hugo-theme-stack/tree/master/i18n
@@ -12,7 +12,7 @@ defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
 
 # Change it to your Disqus shortname before using
-disqusShortname = "hugo-theme-stack"
+disqusShortname = ""
 
 [pagination]
     pagerSize = 5

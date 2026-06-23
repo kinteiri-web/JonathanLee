@@ -1,0 +1,27 @@
+{{- $active := .Active -}}
+
+<section class="home-portal">
+    <div class="home-portal__header">
+        <h1>
+            <span class="home-portal__icon">
+                {{ partial "helper/icon" "home" }}
+            </span>
+            首页
+        </h1>
+        <p></p>
+    </div>
+
+    <div class="home-portal__grid">
+        <a class="home-portal__card {{ if eq $active "updates" }}is-active{{ end }}" href="{{ relLangURL "" }}">
+            <span class="home-portal__icon">{{ partial "helper/icon" "clock" }}</span>
+            <span class="home-portal__title">近期更新</span>
+            <span class="home-portal__description">按发布时间查看最新文章。</span>
+        </a>
+
+        <a class="home-portal__card {{ if eq $active "categories" }}is-active{{ end }}" href="{{ relLangURL "categories/" }}">
+            <span class="home-portal__icon">{{ partial "helper/icon" "categories" }}</span>
+            <span class="home-portal__title">所有分类</span>
+            <span class="home-portal__description">按分类查找内容。</span>
+        </a>
+    </div>
+</section>

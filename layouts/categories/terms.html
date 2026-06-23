@@ -1,0 +1,48 @@
+{{ define "body-class" }}home-subview{{ end }}
+
+{{ define "main" }}
+    {{ partial "home/portal-nav.html" (dict "Active" "categories") }}
+
+    {{ $terms := .Pages }}
+    {{ if $terms }}
+        <section class="home-categories">
+            <div class="home-recent__header">
+                <h2 class="section-title">所有分类</h2>
+            </div>
+
+            <div class="category-mosaic">
+                {{ range $index, $term := $terms }}
+                    {{ $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) }}
+                    {{ $background := default "var(--accent-color)" .Params.style.background }}
+                    {{ $color := default "var(--accent-color-text)" .Params.style.color }}
+                    <a class="category-mosaic__card category-mosaic__card--{{ mod $index 5 }}" href="{{ .RelPermalink }}">
+                        <div class="category-mosaic__media" style="background: {{ $background }}; color: {{ $color }};">
+                            {{ if $image }}
+                                {{ partial "helper/thumbnail-image" (dict
+                                    "Resource" $image.Resource
+                                    "Width" 800
+                                    "Height" 420
+                                    "Resize" .Site.Params.ImageProcessing.Thumbnail.Enabled
+                                    "Attributes" (dict
+                                        "src" $image.Permalink
+                                        "alt" .Title
+                                        "loading" "lazy"
+                                    )
+                                ) }}
+                            {{ else }}
+                                <span>{{ .Title }}</span>
+                            {{ end }}
+                        </div>
+
+                        <div class="category-mosaic__body">
+                            <h3>{{ .Title }}</h3>
+                            <p>{{ len .Pages }} 篇文章</p>
+                        </div>
+                    </a>
+                {{ end }}
+            </div>
+        </section>
+    {{ end }}
+
+    {{ partialCached "footer/footer" . }}
+{{ end }}

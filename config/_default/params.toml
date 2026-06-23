@@ -13,15 +13,15 @@ SortBy              = "default"
 
 [footer]
     since      = 2026
-    customText = "Built with Hugo Theme Stack"
+    customText = "一二123的博客"
 #customTEXT可以在页脚添加自定义文字，比如built with hugo theme stack之类的，默认是空，如果不想显示版权年份，可以把since改成0或者干脆删除since这一行
 [dateFormat]
     published   = ":date_full"
     lastUpdated = ":date_full"
 
 [sidebar]
-    emoji    = "🥳"
-    subtitle = "My daily life in Japan."
+    emoji    = "🏀"
+    subtitle = "Institude of Science Tokyo"
     avatar   = "/img/avatar.jpg"
     #头像path
 
@@ -55,8 +55,8 @@ SortBy              = "default"
 
 ## Comments
 [comments]
-    enabled  = true
-    provider = "disqus"
+    enabled  = false
+    provider = ""
 
     # See all the available configurations at https://github.com/CaiJimmy/hugo-theme-stack/blob/master/config/_default/params.toml
     # Copy the configurations you need from there and paste it here.

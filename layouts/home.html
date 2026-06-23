@@ -1,0 +1,21 @@
+{{ define "main" }}
+    {{ partial "home/portal-nav.html" (dict "Active" "updates") }}
+
+    {{ $recentPages := first 5 (partial "helper/pages.html" .Site.Home) }}
+    {{ with $recentPages }}
+        <section class="home-recent" id="recent-updates">
+            <div class="home-recent__header">
+                <h2 class="section-title">近期更新</h2>
+                <a class="home-recent__more" href="{{ relLangURL "updates/" }}">查看全部</a>
+            </div>
+
+            <div class="article-list--compact">
+                {{ range . }}
+                    {{ partial "article-list/compact" . }}
+                {{ end }}
+            </div>
+        </section>
+    {{ end }}
+
+    {{ partialCached "footer/footer" . }}
+{{ end }}

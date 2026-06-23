@@ -1,3 +1,224 @@
 /*
     You can add your own custom styles here.
 */
+
+.home-portal {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.home-portal__header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home-portal__eyebrow {
+    margin: 0;
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.home-portal__header h1 {
+    margin: 0;
+    color: var(--card-text-color-main);
+    //新增这条代码之后，就可以让首页使用的h1文本跟随深浅色模式自动变化了。
+    font-size: 3.2rem;
+    line-height: 1.25;
+}
+
+.home-portal__header p {
+    margin: 0;
+    color: var(--card-text-color-secondary);
+    font-size: 1.7rem;
+}
+
+.home-portal__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.home-portal__card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 14px;
+    align-items: start;
+    padding: 22px;
+    border-radius: var(--card-border-radius);
+    background: var(--card-background);
+    box-shadow: var(--shadow-l1);
+    color: var(--card-text-color-main);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.home-portal__card:hover {
+    box-shadow: var(--shadow-l2);
+    transform: translateY(-2px);
+}
+
+.home-portal__card.is-active {
+    background: var(--accent-color);
+    color: var(--accent-color-text);
+}
+
+.home-portal__card.is-active .home-portal__icon,
+.home-portal__card.is-active .home-portal__description {
+    color: currentColor;
+}
+
+.home-subview #main-menu > li:first-child > a {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.home-portal__icon {
+    grid-row: span 2;
+    color: var(--accent-color);
+}
+
+.home-portal__title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.home-portal__description {
+    color: var(--card-text-color-secondary);
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+.home-recent {
+    margin-top: 32px;
+    scroll-margin-top: 24px;
+}
+
+.home-categories {
+    margin-top: 36px;
+    scroll-margin-top: 24px;
+}
+
+.home-recent__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.home-recent__header .section-title {
+    margin: 0;
+}
+
+.home-recent__more {
+    flex-shrink: 0;
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.category-mosaic {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-flow: dense;
+    gap: 18px;
+}
+
+.category-mosaic__card {
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    overflow: hidden;
+    border-radius: var(--card-border-radius);
+    background: var(--card-background);
+    box-shadow: var(--shadow-l1);
+    color: var(--card-text-color-main);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.category-mosaic__card:hover {
+    box-shadow: var(--shadow-l2);
+    transform: translateY(-2px);
+}
+
+.category-mosaic__card--0,
+.category-mosaic__card--3 {
+    min-height: 280px;
+}
+
+.category-mosaic__card--1 {
+    min-height: 240px;
+}
+
+.category-mosaic__card--2 {
+    min-height: 260px;
+}
+
+.category-mosaic__card--4 {
+    min-height: 220px;
+}
+
+.category-mosaic__media {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    min-height: 150px;
+}
+
+.category-mosaic__media img {
+    width: 100%;
+    height: 100%;
+    min-height: 150px;
+    object-fit: cover;
+}
+
+.category-mosaic__media span {
+    padding: 20px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.category-mosaic__body {
+    padding: 16px 18px;
+    border-top: 1px solid var(--card-separator-color);
+}
+
+.category-mosaic__body h3 {
+    margin: 0;
+    color: var(--card-text-color-main);
+    font-size: 1.9rem;
+}
+
+.category-mosaic__body p {
+    margin: 6px 0 0;
+    color: var(--card-text-color-secondary);
+    font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+    .home-portal__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-portal__header h1 {
+        font-size: 2.6rem;
+    }
+
+    .category-mosaic {
+        grid-template-columns: 1fr;
+    }
+
+    .category-mosaic__card,
+    .category-mosaic__card--0,
+    .category-mosaic__card--1,
+    .category-mosaic__card--2,
+    .category-mosaic__card--3,
+    .category-mosaic__card--4 {
+        min-height: 220px;
+    }
+}
